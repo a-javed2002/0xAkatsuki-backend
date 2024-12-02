@@ -4,6 +4,7 @@ const User = require('../models/User');
 
 const getUserProfile = async (req, res) => {
     try {
+        console.log("req is coming after successful login");
         // Access the authenticated user's ID from req.user
         const user = await User.findById(req.user.id); // Make sure to use the ID stored in the JWT payload
         if (!user) {
